@@ -13,7 +13,7 @@ object HelloWorld {
     val lines = sc.textFile("data/ml-100k/u.data")
     val numLines = lines.count()
 
-    println("Hello furkhan! The u.data file has " + numLines + " lines.")
+    println("Hello, furkhan shaikh! The u.data file has " + numLines + " lines.")
 
     sc.stop()
   }
