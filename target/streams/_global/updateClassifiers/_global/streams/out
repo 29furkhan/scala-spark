@@ -1,0 +1,4 @@
+[debug] "not up to date. inChanged = true, force = false
+[debug] Updating ProjectRef(uri("file:/Users/furkhan/Desktop/Spark%20Scala/Course%20material/"), "course-material")...
+[debug] Done updating ProjectRef(uri("file:/Users/furkhan/Desktop/Spark%20Scala/Course%20material/"), "course-material")
+[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
