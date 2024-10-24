@@ -39,7 +39,7 @@ object FurkhanFriendsByAge {
     val rdd = linesRDD.map(parser)
     // We have values like (33, 200), (33, 2)
     // But to find the average of them we need to transform it -> (33, (202, 2))
-    // -> For age 33 we have total 202 friends and 2 people with age 33 in dataset.
+    // -> For age 33 we have total 202 friends and 2 people with age 33 in dataset
 
     val newRdd = rdd.mapValues(input => (input, 1))
     // Here we added 1 as initial count -> (33, (200, 1)), (33, (2, 1))
