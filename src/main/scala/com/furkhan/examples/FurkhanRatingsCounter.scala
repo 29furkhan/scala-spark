@@ -33,6 +33,7 @@ object FurkhanRatingsCounter {
     """
     // _ is a tuple (rating, count), using ._1 meaning we are asking sortBy to sort it with first elem.
     val sortedResults = results.toSeq.sortBy(_._1).reverse
+    // We can achieve the same using sortByKey() on key-value RDD.
     
     // Print each result on its own line.
     sortedResults.foreach(println)
