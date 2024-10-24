@@ -6,7 +6,7 @@ We need to find the average numbers of friends for a given age.
 (Age, No_of_friends)
  */
 
-package com.furkhan.examples
+package com.furkhan.examples.RDDs
 
 import org.apache.log4j._
 import org.apache.spark._

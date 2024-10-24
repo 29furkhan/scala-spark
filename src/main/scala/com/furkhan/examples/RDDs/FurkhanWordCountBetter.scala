@@ -1,7 +1,7 @@
 /*
 Input: Count the words in a book.
  */
-package com.furkhan.examples
+package com.furkhan.examples.RDDs
 
 import org.apache.log4j._
 import org.apache.spark._

@@ -1,6 +1,7 @@
-package com.furkhan.examples
-import org.apache.spark._
+package com.furkhan.examples.RDDs
+
 import org.apache.log4j._
+import org.apache.spark._
 
 object FurkhanRatingsCounter {
  
