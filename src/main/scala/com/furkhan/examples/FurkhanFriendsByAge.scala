@@ -41,7 +41,7 @@ object FurkhanFriendsByAge {
     // But to find the average of them we need to transform it -> (33, (202, 2))
     // -> For age 33 we have total 202 friends and 2 people with age 33 in dataset.
 
-    val newRdd = rdd.mapValues((input) => (input, 1))
+    val newRdd = rdd.mapValues(input => (input, 1))
     // Here we added 1 as initial count -> (33, (200, 1)), (33, (2, 1))
 
     val reducedRdd = newRdd.reduceByKey((x, y) => (x._1 + y._1, x._2 + y._2))

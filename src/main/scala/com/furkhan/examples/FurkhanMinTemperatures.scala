@@ -44,7 +44,7 @@ object FurkhanMinTemperatures {
     // Collect, format, and print the results
     val results = minTempsByStation.collect()
 
-    results.map(println)
+    results.foreach(println)
     for(station <- results) {
       println(s"${station._1}'s minimum temperature is ${station._2}")
     }
