@@ -1,4 +1,4 @@
-package com.furkhan.examples.DFs;
+package com.furkhan.examples.DFs
 
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql._
