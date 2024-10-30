@@ -42,5 +42,7 @@ object FurkhanFakeFriendsDataSet{
     inputDS.groupBy("age").agg(
       round(avg("friends").alias("average"), 2).alias("average")
     ).sort(col("age").desc).show(5)
+
+    spark.stop()
   }
 }

@@ -27,11 +27,10 @@ object FurkhanMinTempDataSet {
         .master("local[*]")
         .getOrCreate()
 
-      val tempSchema = new StructType()
-      tempSchema
+      var tempSchema = new StructType()
         .add("stationID", StringType, nullable=true)
         .add("date", IntegerType, nullable=true)
-        .add("measure-type", StringType, nullable=true)
+        .add("measure_type", StringType, nullable=true)
         .add("temperature", FloatType, nullable=true)
 
       import spark.implicits._
@@ -40,6 +39,7 @@ object FurkhanMinTempDataSet {
         .csv("data/1800.csv")
         .as[Temperature]
 
+      inputCSV.printSchema()
       // Filter the TMIN
       val minTemps = inputCSV.filter($"measure_type" === "TMIN")
 
@@ -47,9 +47,18 @@ object FurkhanMinTempDataSet {
       val stationTemps = minTemps.select("stationID", "temperature")
 
       // Find minimum temp for each station
-      stationTemps.groupBy("stationID").agg(
+      val result = stationTemps.groupBy("stationID").agg(
         min("temperature").alias("minimum")
-      ).show()
+      )
 
+      val results = result.collect()
+
+      for(result <- results) {
+        val temp = result(1).asInstanceOf[Float]
+        val formattedTemp = f"${temp}%.2f F"
+        println(s"${result(0)}'s minimum temperature is: ${formattedTemp}")
+      }
+
+      spark.stop()
     }
 }
